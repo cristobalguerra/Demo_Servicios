@@ -31,11 +31,11 @@ export default function FAQ() {
               <button onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
                 className="w-full flex items-center justify-between py-4 text-left group">
-                <span className="text-sm font-medium text-text-heading pr-4 group-hover:text-brand transition-colors">{f.q}</span>
+                <span className="text-[15px] font-medium text-text-heading pr-4 group-hover:text-brand transition-colors">{f.q}</span>
                 <ChevronDown className={`w-4 h-4 text-text-dim shrink-0 transition-transform duration-200 ${open === i ? 'rotate-180' : ''}`} />
               </button>
               <div className={`overflow-hidden transition-all duration-300 ease-out ${open === i ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <p className="pb-4 text-sm text-text-dim leading-relaxed">{f.a}</p>
+                <p className="pb-4 text-[15px] text-text-dim leading-relaxed">{f.a}</p>
               </div>
             </div>
           ))}

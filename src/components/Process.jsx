@@ -25,8 +25,8 @@ export default function Process() {
               <div className="w-10 h-10 bg-surface border border-border rounded-lg flex items-center justify-center mt-2 mb-3">
                 <s.icon className="w-5 h-5 text-text-muted" />
               </div>
-              <h3 className="font-semibold text-text-heading text-sm tracking-tight mb-1">{s.title}</h3>
-              <p className="text-xs text-text-dim leading-relaxed">{s.desc}</p>
+              <h3 className="font-semibold text-text-heading text-[15px] tracking-tight mb-1.5">{s.title}</h3>
+              <p className="text-sm text-text-dim leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

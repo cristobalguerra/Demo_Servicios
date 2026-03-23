@@ -63,7 +63,7 @@ export default function Navbar() {
           <div className="px-6 py-3 space-y-0.5">
             {links.map(l => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)}
-                className="block px-3 py-2.5 text-sm text-text-muted hover:text-text-heading rounded transition-colors">
+                className="block px-3 py-3 text-[15px] text-text-muted hover:text-text-heading rounded transition-colors">
                 {l.label}
               </a>
             ))}

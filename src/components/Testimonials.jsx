@@ -14,7 +14,7 @@ export default function Testimonials() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
           {testimonials.map((t, i) => (
-            <div key={i} className="p-5 bg-surface border border-border rounded-xl">
+            <div key={i} className="p-6 bg-surface border border-border rounded-xl">
               <div className="flex gap-0.5 mb-3">
                 {[...Array(t.rating)].map((_, j) => (
                   <Star key={j} className="w-3 h-3 text-accent-amber fill-accent-amber" />
@@ -26,8 +26,8 @@ export default function Testimonials() {
                   {t.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-text-heading">{t.name}</p>
-                  <p className="text-[10px] text-text-faint">{t.role}</p>
+                  <p className="text-sm font-medium text-text-heading">{t.name}</p>
+                  <p className="text-xs text-text-faint">{t.role}</p>
                 </div>
               </div>
             </div>

@@ -23,8 +23,8 @@ export default function Contact() {
               <W key={i} {...(item.href ? { href: item.href, target: item.href?.startsWith('http') ? '_blank' : undefined } : {})}
                 className="p-4 bg-surface border border-border rounded-xl hover:border-border-hover transition-colors group">
                 <item.icon className="w-5 h-5 text-text-faint mb-3 group-hover:text-brand transition-colors" />
-                <p className="text-[11px] font-mono text-text-faint uppercase tracking-wider">{item.title}</p>
-                <p className="text-sm font-medium text-text-heading mt-0.5">{item.value}</p>
+                <p className="text-xs font-mono text-text-faint uppercase tracking-wider">{item.title}</p>
+                <p className="text-[15px] font-medium text-text-heading mt-1">{item.value}</p>
               </W>
             )
           })}

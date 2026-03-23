@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useServicios, createServicio, updateServicio, deleteServicio } from '../../hooks/useFirestore'
+import { useServicios, createServicio, updateServicio, deleteServicio } from '../../hooks/store'
 import { Plus, X, Pencil, Trash2 } from 'lucide-react'
 
 const CATS = [

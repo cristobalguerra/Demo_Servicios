@@ -34,8 +34,8 @@ export default function Business() {
                   <f.icon className="w-5 h-5 text-text-muted" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm text-text-heading tracking-tight">{f.title}</h3>
-                  <p className="text-xs text-text-dim mt-0.5">{f.desc}</p>
+                  <h3 className="font-semibold text-[15px] text-text-heading tracking-tight">{f.title}</h3>
+                  <p className="text-sm text-text-dim mt-1">{f.desc}</p>
                 </div>
               </div>
             ))}

@@ -1,4 +1,5 @@
 import { Wrench } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -12,13 +13,13 @@ export default function Footer() {
               </div>
               <span className="text-sm font-semibold text-text-heading tracking-tight">TecniHome</span>
             </div>
-            <p className="text-xs text-text-dim leading-relaxed">
+            <p className="text-sm text-text-dim leading-relaxed">
               Servicios técnicos profesionales a domicilio en Monterrey y área metropolitana.
             </p>
           </div>
 
           <div>
-            <p className="text-[10px] font-mono text-text-dim uppercase tracking-wider mb-3">Servicios</p>
+            <p className="text-xs font-mono text-text-dim uppercase tracking-wider mb-3">Servicios</p>
             <ul className="space-y-1.5 text-xs text-text-dim">
               {['Instalación de Climas', 'Mantenimiento A/C', 'Reparación', 'Eléctrico', 'Diagnóstico'].map(s => (
                 <li key={s}><a href="#servicios" className="hover:text-text-muted transition-colors">{s}</a></li>
@@ -27,22 +28,22 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-[10px] font-mono text-text-dim uppercase tracking-wider mb-3">Empresa</p>
+            <p className="text-xs font-mono text-text-dim uppercase tracking-wider mb-3">Empresa</p>
             <ul className="space-y-1.5 text-xs text-text-dim">
               {[
                 { l: 'Cobertura', h: '#cobertura' },
                 { l: 'Empresas', h: '#empresas' },
                 { l: 'FAQ', h: '#faq' },
                 { l: 'Contacto', h: '#contacto' },
-                { l: 'Admin (Demo)', h: '/admin' },
               ].map(x => (
                 <li key={x.l}><a href={x.h} className="hover:text-text-muted transition-colors">{x.l}</a></li>
               ))}
+              <li><Link to="/admin" className="hover:text-text-muted transition-colors">Admin (Demo)</Link></li>
             </ul>
           </div>
 
           <div>
-            <p className="text-[10px] font-mono text-text-dim uppercase tracking-wider mb-3">Legal</p>
+            <p className="text-xs font-mono text-text-dim uppercase tracking-wider mb-3">Legal</p>
             <ul className="space-y-1.5 text-xs text-text-dim">
               <li><a href="#" className="hover:text-text-muted transition-colors">Aviso de Privacidad</a></li>
               <li><a href="#" className="hover:text-text-muted transition-colors">Términos y Condiciones</a></li>

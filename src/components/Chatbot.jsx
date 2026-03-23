@@ -111,7 +111,7 @@ export default function Chatbot() {
     <>
       {!isOpen && (
         <button onClick={() => setIsOpen(true)}
-          className="fixed bottom-20 lg:bottom-6 right-5 z-50 w-11 h-11 bg-brand hover:bg-brand-hover text-white rounded-full shadow-lg shadow-brand/20 flex items-center justify-center transition-all hover:scale-105">
+          className="fixed bottom-[4.5rem] lg:bottom-6 right-5 z-50 w-12 h-12 bg-brand hover:bg-brand-hover text-white rounded-full shadow-lg shadow-brand/20 flex items-center justify-center transition-all hover:scale-105">
           <MessageCircle className="w-5 h-5" />
           {unread > 0 && (
             <span className="absolute -top-1 -right-1 w-4 h-4 bg-accent-red text-white text-[11px] font-bold rounded-full flex items-center justify-center">{unread}</span>
@@ -120,8 +120,8 @@ export default function Chatbot() {
       )}
 
       {isOpen && (
-        <div className="fixed bottom-20 lg:bottom-6 right-5 z-50 w-[360px] max-w-[calc(100vw-2.5rem)] bg-surface rounded-2xl shadow-2xl shadow-black/40 border border-border flex flex-col overflow-hidden"
-          style={{ height: 'min(520px, calc(100vh - 120px))' }}>
+        <div className="fixed bottom-[4.5rem] lg:bottom-6 right-5 z-50 w-[360px] max-w-[calc(100vw-2.5rem)] bg-surface rounded-2xl shadow-2xl shadow-black/40 border border-border flex flex-col overflow-hidden"
+          style={{ height: 'min(520px, calc(100vh - 140px))' }}>
 
           <div className="px-4 py-3 border-b border-border flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2.5">

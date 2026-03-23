@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Search, ChevronDown, Phone, MapPin, CalendarDays } from 'lucide-react'
-import { useSolicitudes, updateSolicitud, useTecnicos } from '../../hooks/useFirestore'
+import { useSolicitudes, updateSolicitud, useTecnicos } from '../../hooks/store'
 
 const st = {
   pendiente: { label: 'Pendiente', cls: 'bg-accent-amber/10 text-accent-amber border-accent-amber/20' },

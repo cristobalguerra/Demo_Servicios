@@ -40,7 +40,7 @@ export default function Services() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map(s => (
             <a key={s.id} href="#agendar"
-              className="group p-5 rounded-xl bg-surface border border-border hover:border-border-hover transition-all">
+              className="group p-6 rounded-xl bg-surface border border-border hover:border-border-hover transition-all">
               <div className="flex items-start justify-between mb-4">
                 <div className="w-10 h-10 bg-surface-3 border border-border rounded-lg flex items-center justify-center group-hover:border-border-hover transition-colors">
                   <s.icon className="w-5 h-5 text-text-muted" />
@@ -49,14 +49,14 @@ export default function Services() {
                   {s.price}
                 </span>
               </div>
-              <h3 className="font-semibold text-text-heading text-sm mb-1 tracking-tight">{s.name}</h3>
-              <p className="text-xs text-text-dim leading-relaxed mb-4">{s.description}</p>
+              <h3 className="font-semibold text-text-heading text-[15px] mb-1.5 tracking-tight">{s.name}</h3>
+              <p className="text-sm text-text-dim leading-relaxed mb-4">{s.description}</p>
               <div className="flex items-center justify-between pt-3 border-t border-border-subtle">
-                <span className="flex items-center gap-1.5 text-[11px] text-text-dim font-mono">
-                  <Clock className="w-3 h-3" /> {s.time}
+                <span className="flex items-center gap-1.5 text-xs text-text-dim font-mono">
+                  <Clock className="w-3.5 h-3.5" /> {s.time}
                 </span>
-                <span className="flex items-center gap-1 text-xs text-brand opacity-0 group-hover:opacity-100 transition-opacity font-medium">
-                  Solicitar <ArrowRight className="w-3 h-3" />
+                <span className="flex items-center gap-1 text-sm text-brand opacity-0 group-hover:opacity-100 transition-opacity font-medium">
+                  Solicitar <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </div>
             </a>

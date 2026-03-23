@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useTecnicos, createTecnico, updateTecnico, deleteTecnico, useZonas } from '../../hooks/useFirestore'
+import { useTecnicos, createTecnico, updateTecnico, deleteTecnico, useZonas } from '../../hooks/store'
 import { Plus, X, Pencil, Trash2, User } from 'lucide-react'
 
 const ESPECIALIDADES = ['clima', 'electrico', 'general']
