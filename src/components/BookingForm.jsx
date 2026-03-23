@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Upload, CheckCircle2, AlertCircle } from 'lucide-react'
 import { services, zones, timeSlots, propertyTypes } from '../data/services'
+import { createSolicitud } from '../hooks/useFirestore'
+import { storage } from '../lib/firebase'
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 const initial = {
   nombre: '', telefono: '', email: '', servicio: '', fecha: '',
@@ -28,9 +31,41 @@ export default function BookingForm() {
     return Object.keys(e).length === 0
   }
 
-  const handleSubmit = (e) => {
+  const [submitting, setSubmitting] = useState(false)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (validate()) setSubmitted(true)
+    if (!validate()) return
+    setSubmitting(true)
+    try {
+      let foto_url = null
+      if (form.foto) {
+        const fileRef = ref(storage, `solicitudes/${Date.now()}_${form.foto.name}`)
+        await uploadBytes(fileRef, form.foto)
+        foto_url = await getDownloadURL(fileRef)
+      }
+      const servicio = services.find(s => s.id === form.servicio)
+      const zona = zones.find(z => z.id === form.zona)
+      await createSolicitud({
+        nombre_cliente: form.nombre,
+        telefono: form.telefono,
+        email: form.email,
+        servicio_id: form.servicio,
+        servicio_nombre: servicio?.name || form.servicio,
+        zona_id: form.zona,
+        zona_nombre: zona?.name || form.zona,
+        fecha: form.fecha,
+        hora: form.hora,
+        direccion: form.direccion,
+        inmueble: form.inmueble,
+        descripcion: form.descripcion,
+        foto_url,
+      })
+      setSubmitted(true)
+    } catch (err) {
+      console.error('Error al enviar solicitud:', err)
+    }
+    setSubmitting(false)
   }
 
   const set = (k, v) => {
@@ -169,9 +204,9 @@ export default function BookingForm() {
           )}
 
           <div className="mt-6 flex items-center gap-4">
-            <button type="submit"
-              className="px-6 py-2.5 bg-brand hover:bg-brand-hover text-white text-sm font-medium rounded-lg transition-colors">
-              Confirmar solicitud
+            <button type="submit" disabled={submitting}
+              className="px-6 py-2.5 bg-brand hover:bg-brand-hover disabled:opacity-50 text-white text-sm font-medium rounded-lg transition-colors">
+              {submitting ? 'Enviando...' : 'Confirmar solicitud'}
             </button>
             <span className="text-[11px] text-text-faint">Al enviar aceptas nuestros términos.</span>
           </div>
